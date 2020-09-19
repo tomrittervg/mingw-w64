@@ -31,6 +31,12 @@ cpp_quote("#ifndef _WINGDI_")
 typedef struct FONTSIGNATURE FONTSIGNATURE;
 cpp_quote("#endif /* _WINGDI_ */")
 
+
+cpp_quote("#ifdef __cplusplus")
+cpp_quote("#define DWRITE_MAKE_FONT_AXIS_TAG(a,b,c,d) \\")
+cpp_quote("    (static_cast<DWRITE_FONT_AXIS_TAG>(DWRITE_MAKE_OPENTYPE_TAG(a,b,c,d)))")
+cpp_quote("#endif")
+
 typedef enum DWRITE_LOCALITY
 {
     DWRITE_LOCALITY_REMOTE,
