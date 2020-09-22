@@ -8172,7 +8172,7 @@ DEFINE_GUID(IID_IDWriteFontFace4, 0x27f2a904, 0x4eb8, 0x441d, 0x96,0x78, 0x05,0x
 MIDL_INTERFACE("27f2a904-4eb8-441d-9678-0563f53e3e2f")
 IDWriteFontFace4 : public IDWriteFontFace3
 {
-    virtual HRESULT STDMETHODCALLTYPE GetGlyphImageFormats_(
+    virtual HRESULT STDMETHODCALLTYPE GetGlyphImageFormats(
         UINT16 glyph,
         UINT32 ppem_first,
         UINT32 ppem_last,
@@ -8472,7 +8472,7 @@ typedef struct IDWriteFontFace4Vtbl {
         WINBOOL *are_local);
 
     /*** IDWriteFontFace4 methods ***/
-    HRESULT (STDMETHODCALLTYPE *GetGlyphImageFormats_)(
+    HRESULT (STDMETHODCALLTYPE *GetGlyphImageFormats)(
         IDWriteFontFace4 *This,
         UINT16 glyph,
         UINT32 ppem_first,
@@ -8553,7 +8553,7 @@ interface IDWriteFontFace4 {
 #define IDWriteFontFace4_AreCharactersLocal(This,characters,count,enqueue_if_not,are_local) (This)->lpVtbl->AreCharactersLocal(This,characters,count,enqueue_if_not,are_local)
 #define IDWriteFontFace4_AreGlyphsLocal(This,glyphs,count,enqueue_if_not,are_local) (This)->lpVtbl->AreGlyphsLocal(This,glyphs,count,enqueue_if_not,are_local)
 /*** IDWriteFontFace4 methods ***/
-#define IDWriteFontFace4_GetGlyphImageFormats_(This,glyph,ppem_first,ppem_last,formats) (This)->lpVtbl->GetGlyphImageFormats_(This,glyph,ppem_first,ppem_last,formats)
+#define IDWriteFontFace4_GetGlyphImageFormats(This,glyph,ppem_first,ppem_last,formats) (This)->lpVtbl->GetGlyphImageFormats(This,glyph,ppem_first,ppem_last,formats)
 #define IDWriteFontFace4_GetGlyphImageFormats(This) (This)->lpVtbl->GetGlyphImageFormats(This)
 #define IDWriteFontFace4_GetGlyphImageData(This,glyph,ppem,format,data,context) (This)->lpVtbl->GetGlyphImageData(This,glyph,ppem,format,data,context)
 #define IDWriteFontFace4_ReleaseGlyphImageData(This,context) (This)->lpVtbl->ReleaseGlyphImageData(This,context)
@@ -8696,8 +8696,8 @@ static FORCEINLINE HRESULT IDWriteFontFace4_AreGlyphsLocal(IDWriteFontFace4* Thi
     return This->lpVtbl->AreGlyphsLocal(This,glyphs,count,enqueue_if_not,are_local);
 }
 /*** IDWriteFontFace4 methods ***/
-static FORCEINLINE HRESULT IDWriteFontFace4_GetGlyphImageFormats_(IDWriteFontFace4* This,UINT16 glyph,UINT32 ppem_first,UINT32 ppem_last,DWRITE_GLYPH_IMAGE_FORMATS *formats) {
-    return This->lpVtbl->GetGlyphImageFormats_(This,glyph,ppem_first,ppem_last,formats);
+static FORCEINLINE HRESULT IDWriteFontFace4_GetGlyphImageFormats(IDWriteFontFace4* This,UINT16 glyph,UINT32 ppem_first,UINT32 ppem_last,DWRITE_GLYPH_IMAGE_FORMATS *formats) {
+    return This->lpVtbl->GetGlyphImageFormats(This,glyph,ppem_first,ppem_last,formats);
 }
 static FORCEINLINE DWRITE_GLYPH_IMAGE_FORMATS IDWriteFontFace4_GetGlyphImageFormats(IDWriteFontFace4* This) {
     return This->lpVtbl->GetGlyphImageFormats(This);
@@ -9024,7 +9024,7 @@ typedef struct IDWriteFontFace5Vtbl {
         WINBOOL *are_local);
 
     /*** IDWriteFontFace4 methods ***/
-    HRESULT (STDMETHODCALLTYPE *GetGlyphImageFormats_)(
+    HRESULT (STDMETHODCALLTYPE *GetGlyphImageFormats)(
         IDWriteFontFace5 *This,
         UINT16 glyph,
         UINT32 ppem_first,
@@ -9125,7 +9125,7 @@ interface IDWriteFontFace5 {
 #define IDWriteFontFace5_AreCharactersLocal(This,characters,count,enqueue_if_not,are_local) (This)->lpVtbl->AreCharactersLocal(This,characters,count,enqueue_if_not,are_local)
 #define IDWriteFontFace5_AreGlyphsLocal(This,glyphs,count,enqueue_if_not,are_local) (This)->lpVtbl->AreGlyphsLocal(This,glyphs,count,enqueue_if_not,are_local)
 /*** IDWriteFontFace4 methods ***/
-#define IDWriteFontFace5_GetGlyphImageFormats_(This,glyph,ppem_first,ppem_last,formats) (This)->lpVtbl->GetGlyphImageFormats_(This,glyph,ppem_first,ppem_last,formats)
+#define IDWriteFontFace5_GetGlyphImageFormats(This,glyph,ppem_first,ppem_last,formats) (This)->lpVtbl->GetGlyphImageFormats(This,glyph,ppem_first,ppem_last,formats)
 #define IDWriteFontFace5_GetGlyphImageFormats(This) (This)->lpVtbl->GetGlyphImageFormats(This)
 #define IDWriteFontFace5_GetGlyphImageData(This,glyph,ppem,format,data,context) (This)->lpVtbl->GetGlyphImageData(This,glyph,ppem,format,data,context)
 #define IDWriteFontFace5_ReleaseGlyphImageData(This,context) (This)->lpVtbl->ReleaseGlyphImageData(This,context)
@@ -9274,8 +9274,8 @@ static FORCEINLINE HRESULT IDWriteFontFace5_AreGlyphsLocal(IDWriteFontFace5* Thi
     return This->lpVtbl->AreGlyphsLocal(This,glyphs,count,enqueue_if_not,are_local);
 }
 /*** IDWriteFontFace4 methods ***/
-static FORCEINLINE HRESULT IDWriteFontFace5_GetGlyphImageFormats_(IDWriteFontFace5* This,UINT16 glyph,UINT32 ppem_first,UINT32 ppem_last,DWRITE_GLYPH_IMAGE_FORMATS *formats) {
-    return This->lpVtbl->GetGlyphImageFormats_(This,glyph,ppem_first,ppem_last,formats);
+static FORCEINLINE HRESULT IDWriteFontFace5_GetGlyphImageFormats(IDWriteFontFace5* This,UINT16 glyph,UINT32 ppem_first,UINT32 ppem_last,DWRITE_GLYPH_IMAGE_FORMATS *formats) {
+    return This->lpVtbl->GetGlyphImageFormats(This,glyph,ppem_first,ppem_last,formats);
 }
 static FORCEINLINE DWRITE_GLYPH_IMAGE_FORMATS IDWriteFontFace5_GetGlyphImageFormats(IDWriteFontFace5* This) {
     return This->lpVtbl->GetGlyphImageFormats(This);

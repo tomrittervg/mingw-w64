@@ -764,6 +764,8 @@ typedef struct DWRITE_GLYPH_IMAGE_DATA
 ]
 interface IDWriteFontFace4 : IDWriteFontFace3
 {
+    // XXX: GetGlyphImageFormats_ has been renamed to GetGlyphImageFormats in
+    // the corresponding .h file.
     HRESULT GetGlyphImageFormats_(
         UINT16 glyph,
         UINT32 ppem_first,
