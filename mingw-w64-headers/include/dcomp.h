@@ -223,12 +223,21 @@ DECLARE_INTERFACE_IID_(IDCompositionRectangleClip,IDCompositionClip,"9842ad7d-d9
 #define INTERFACE IDCompositionVisual
 DECLARE_INTERFACE_IID_(IDCompositionVisual,IUnknown,"4d93059d-097b-4651-9a60-f0f25116e2f3")
 {
+#if defined(_MSC_VER) && defined(__cplusplus)
     STDMETHOD(SetOffsetX)(THIS_ float) PURE;
     STDMETHOD(SetOffsetX)(THIS_ IDCompositionAnimation*) PURE;
     STDMETHOD(SetOffsetY)(THIS_ float) PURE;
     STDMETHOD(SetOffsetY)(THIS_ IDCompositionAnimation*) PURE;
     STDMETHOD(SetTransform)(THIS_ const D2D_MATRIX_3X2_F&) PURE;
     STDMETHOD(SetTransform)(THIS_ IDCompositionTransform*) PURE;
+#else
+    STDMETHOD(SetOffsetX)(THIS_ IDCompositionAnimation*) PURE;
+    STDMETHOD(SetOffsetX)(THIS_ float) PURE;
+    STDMETHOD(SetOffsetY)(THIS_ IDCompositionAnimation*) PURE;
+    STDMETHOD(SetOffsetY)(THIS_ float) PURE;
+    STDMETHOD(SetTransform)(THIS_ IDCompositionTransform*) PURE;
+    STDMETHOD(SetTransform)(THIS_ const D2D_MATRIX_3X2_F&) PURE;
+#endif
     STDMETHOD(SetTransformParent)(THIS_ IDCompositionVisual*) PURE;
     STDMETHOD(SetEffect)(THIS_ IDCompositionEffect*) PURE;
     STDMETHOD(SetBitmapInterpolationMode)(THIS_ DCOMPOSITION_BITMAP_INTERPOLATION_MODE) PURE;
